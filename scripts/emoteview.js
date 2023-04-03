@@ -71,13 +71,13 @@ async function init() {
     seventvChannelEmotes = await get7tv("users/" + channelID + "/emotes");
     for (i = 0; i < seventvChannelEmotes.length; i++) {
         emote = seventvChannelEmotes[i];
-        emotes.push([emote.name, emote.urls[3][1], "7tv"]);
+        emotes.push([emote.name, emote.urls[0][1], "7tv"]);
     }
 
     seventvGlobalEmotes = await get7tv("/emotes/global");
     for (i = 0; i < seventvGlobalEmotes.length; i++) {
         emote = seventvGlobalEmotes[i];
-        emotes.push([emote.name, emote.urls[3][1], "7tv"]);
+        emotes.push([emote.name, emote.urls[0][1], "7tv"]);
     }
 
     emotes.sort((a, b) => a[0] < b[0] ? -1 : (a[0] > b[0] ? 1 : 0))
